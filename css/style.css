@@ -790,6 +790,33 @@ ul { padding-left: 0; list-style: none; margin: 0; }
 	margin-bottom:.9rem
 	}
 .mission-card p{margin:0}
+/* ---------- Mobile navigation reliability fix ---------- */
+@media (max-width: 760px) {
+  .site-header,
+  .nav-wrap {
+    overflow: visible;
+  }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 102;
+    pointer-events: auto;
+    touch-action: manipulation;
+  }
+
+  .primary-nav {
+    z-index: 101;
+    visibility: hidden;
+  }
+
+  .primary-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
 /*.organization{background:#f3f4f6}
 .organization-grid{
 	display:grid;
