@@ -756,23 +756,31 @@ ul { padding-left: 0; list-style: none; margin: 0; }
 .contact-item i { width: 1.1rem; margin-top: .28rem; color: #f2f2f2; text-align: center; flex: 0 0 1.1rem; }
 .contact-item a, .contact-item span { overflow-wrap: anywhere; }
 
-.mission{background:#a6a7a9}
+.mission{
+	background:#a6a7a9
+}
+
 .mission-grid{
 	display:grid;
 	grid-template-columns:repeat(2,minmax(0,1fr));
 	gap:1.25rem
-	}
+}
+
 .mission-card{
 	background:#fff;
 	border:1px solid var(--c-border);
 	border-radius:var(--radius-lg);
 	padding:2rem;
-	box-shadow:var(--shadow-sm)
-	}
+	box-shadow:var(--shadow-sm);
+	min-width:0;
+	box-sizing:border-box
+}
+
 .mission-card.dark{
 	background:#111;
 	color:#fff
-	}
+}
+
 .mission-card span{
 	display:inline-block;
 	font-size:.78rem;
@@ -781,15 +789,61 @@ ul { padding-left: 0; list-style: none; margin: 0; }
 	text-transform:uppercase;
 	color:var(--c-text-mute);
 	margin-bottom:.7rem
-	}
+}
+
 .mission-card.dark span,
 .mission-card.dark h3,
-.mission-card.dark p{color:#fff}
+.mission-card.dark p{
+	color:#fff
+}
+
 .mission-card h3{
 	font-size:1.55rem;
 	margin-bottom:.9rem
+}
+
+.mission-card p{
+	margin:0
+}
+
+
+/* Mobile */
+@media (max-width:768px){
+
+	.mission-grid{
+		grid-template-columns:1fr;
+		gap:1rem
 	}
-.mission-card p{margin:0}
+
+	.mission-card{
+		width:100%;
+		padding:1.5rem;
+	}
+
+	.mission-card h3{
+		font-size:1.35rem;
+		line-height:1.3
+	}
+
+	.mission-card p{
+		font-size:.95rem;
+		line-height:1.6
+	}
+}
+
+
+/* Small mobile phones */
+@media (max-width:480px){
+
+	.mission-card{
+		padding:1.25rem
+	}
+
+	.mission-card h3{
+		font-size:1.25rem
+	}
+}
+
 /* ---------- Mobile navigation reliability fix ---------- */
 @media (max-width: 760px) {
   .site-header,
